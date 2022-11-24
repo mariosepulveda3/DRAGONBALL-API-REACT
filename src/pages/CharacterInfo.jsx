@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "../styles/CharacterInfo.scss";
 
 const CharacterInfo = () => {
   const { name } = useParams();
@@ -18,15 +19,20 @@ const CharacterInfo = () => {
     getCharacterInfo();
   }, []);
   return (
-    <div key={character.id} className="card">
-      <h3>{character.name}</h3>
-      <div className="img--container">
-        <img src={character.imageUrl} alt={character.imageUrl} />
+    <div className="character-info">
+      <div key={character.id} className="card">
+        <h3>{character.name}</h3>
+        <div className="img--container">
+          <img src={character.imageUrl} alt={character.imageUrl} />
+        </div>
+        <p>{character.role}</p>
+        <p>Universo: {character.universe}</p>
+        <p>Especie: {character.specie}</p>
+        <button onClick={() => navigate("/characters")}>
+          {" "}
+          VOLVER A PERSONAJES
+        </button>
       </div>
-      <p>{character.role}</p>
-    <span>Universo: {character.universe}</span>
-      <p>Especie:{character.specie}</p>
-      <button onClick={() => navigate("/characters")}> TODOS LOS PERSONAJES</button>
     </div>
   );
 };

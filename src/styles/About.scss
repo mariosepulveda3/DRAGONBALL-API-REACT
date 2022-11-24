@@ -1,13 +1,32 @@
-.about{
-    padding-block: 100px;
-    text-align: center;
+.about {
+  padding-inline: 50px;
+  text-align: center;
+
+  div {
+    background-color: rgba(245, 245, 245, 0.622);
+    border: solid 1px orangered;
+    border-radius: 20px;
+    padding: 20px;
+    margin-block: 10px;
 
     h2 {
-        font-size: 50px;
+      color: rgb(172, 0, 0);
     }
 
-    a {
-        font-size: 30px;
-        color: orange;
+    p {
+      line-height: 2;
     }
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 20px;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
 }

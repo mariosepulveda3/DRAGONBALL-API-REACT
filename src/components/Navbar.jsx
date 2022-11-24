@@ -1,24 +1,24 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/Navbar.scss";
 
 const Navbar = () => {
   return (
-    <div className="nav">
+    <div className="navbar">
       <img
         src="https://logos-marcas.com/wp-content/uploads/2021/02/Dragon-Ball-Logo-650x366.png"
         alt="db"
         className="logo"
       />
       <nav>
+        <NavLink to="characters" activeclassname={"active"}>
+          Personajes
+        </NavLink>
         <NavLink to="" activeclassname={"active"}>
-          Home
+          Inicio
         </NavLink>
         <NavLink to="about" activeclassname={"active"}>
-          About
-        </NavLink>
-        <NavLink to="characters" activeclassname={"active"}>
-          Characters
+          Información
         </NavLink>
       </nav>
     </div>
